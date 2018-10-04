@@ -6,7 +6,7 @@
 
 Describe @rah/react-wizard here.
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
+[build-badge]: https://img.shields.io/travis/rahsheen/react-wizard/master.png?style=flat-square
 [build]: https://travis-ci.org/rahsheen/react-wizard
 
 [npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
