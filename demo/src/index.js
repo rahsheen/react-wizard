@@ -7,7 +7,7 @@ class Demo extends Component {
   render() {
     return (
       <div>
-        <h1>@rah/React-Wizard Demo</h1>
+        <h1>@rahsheen/React-Wizard Demo</h1>
         <Wizard>
           <Wizard.Step>
             {({ nextStep, prevStep }) => {

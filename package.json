@@ -1,7 +1,7 @@
 {
-  "name": "@rah/react-wizard",
+  "name": "@rahsheen/react-wizard",
   "version": "0.0.0-development",
-  "description": "@rah/react-wizard React component",
+  "description": "@rahsheen/react-wizard React component",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
