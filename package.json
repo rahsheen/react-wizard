@@ -1,6 +1,6 @@
 {
   "name": "@rah/react-wizard",
-  "version": "1.0.0",
+  "version": "0.0.0-development",
   "description": "@rah/react-wizard React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -17,7 +17,9 @@
     "start": "nwb serve-react-demo",
     "test": "nwb test-react",
     "test:coverage": "nwb test-react --coverage",
-    "test:watch": "nwb test-react --server"
+    "test:watch": "nwb test-react --server",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once"
   },
   "dependencies": {},
   "peerDependencies": {
@@ -26,12 +28,17 @@
   "devDependencies": {
     "nwb": "0.23.x",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "semantic-release": "^15.9.16",
+    "travis-deploy-once": "^5.0.9"
   },
   "author": "",
   "homepage": "",
   "license": "MIT",
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rahsheen/react-wizard.git"
+  },
   "keywords": [
     "react-component"
   ]
