@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { render } from "react-dom";
-
-import Wizard from "../../src/Wizard";
+import Wizard from "../../src/";
 
 class Demo extends Component {
   render() {
