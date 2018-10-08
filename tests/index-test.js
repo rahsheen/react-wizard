@@ -20,4 +20,22 @@ describe('Wizard', () => {
       expect(node.innerHTML).toContain('React-Wizard')
     })
   }) 
+
+  it('does not render without children', () => {
+    render(<Wizard></Wizard>, node, () => {
+      expect(node.children.length).toBe(0);
+    })
+  })
+
+  it('does not render future steps', () => {
+    const structure = (
+      <Wizard>
+        <Wizard.Step>{() => <h2>>@rahsheen/React-Wizard</h2>}</Wizard.Step>
+        <Wizard.Step>{() => <h2>Step 2</h2>}</Wizard.Step>
+      </Wizard>
+    )
+    render(structure, node, () => {
+      expect(node.innerHTML).toNotContain('Step 2');
+    })
+  })
 })
