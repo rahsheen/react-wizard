@@ -75,9 +75,18 @@ describe("Wizard Hook", () => {
     }
 
     const wizardData = setup({ initialValues })
-    expect(wizardData.values).toBe(initialValues)
+    expect(JSON.stringify(wizardData.values)).toBe(JSON.stringify(initialValues))
   })
 
-  it("changes values", () => {})
-  it("sets initial values", () => {})
+  it("changes values", () => {
+    const initialValues = {
+      foo: "Bippety",
+      bar: 3,
+      baz: () => {}
+    }
+
+    const wizardData = setup({ initialValues })
+    wizardData.onChangeValue('bar', 100)
+    expect(JSON.stringify(wizardData.values)).toBe(JSON.stringify({...initialValues, bar: 100}))
+  })
 })
