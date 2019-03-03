@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import { render } from "react-dom";
-import Wizard from "../../src/";
+import React, { Component } from "react"
+import { render } from "react-dom"
+import { Wizard } from "../../src/"
 
 class Demo extends Component {
   render() {
@@ -9,29 +9,29 @@ class Demo extends Component {
         <h1>@rahsheen/React-Wizard Demo</h1>
         <Wizard>
           <Wizard.Step>
-            {({ nextStep, prevStep }) => {
+            {({ nextStep, prevStep, currentIndex }) => {
               return (
                 <div>
-                  <h2>Foo</h2>
+                  <h2>Foo {currentIndex}</h2>
                   <button onClick={prevStep}>Back</button>
                   <button onClick={nextStep}>Next</button>
                 </div>
-              );
+              )
             }}
           </Wizard.Step>
           <Wizard.Step>
-            {({ nextStep, prevStep }) => (
+            {({ nextStep, prevStep, currentIndex }) => (
               <div>
-                <h2>Bar</h2>
+                <h2>Bar {currentIndex}</h2>
                 <button onClick={prevStep}>Back</button>
                 <button onClick={nextStep}>Next</button>
               </div>
             )}
           </Wizard.Step>
           <Wizard.Step>
-            {({ nextStep, prevStep }) => (
+            {({ nextStep, prevStep, currentIndex }) => (
               <div>
-                <h2>Baz</h2>
+                <h2>Baz {currentIndex}</h2>
                 <button onClick={prevStep}>Back</button>
                 <button onClick={nextStep}>Next</button>
               </div>
@@ -39,8 +39,8 @@ class Demo extends Component {
           </Wizard.Step>
         </Wizard>
       </div>
-    );
+    )
   }
 }
 
-render(<Demo />, document.querySelector("#demo"));
+render(<Demo />, document.querySelector("#demo"))
