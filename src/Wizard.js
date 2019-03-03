@@ -13,7 +13,11 @@ const Wizard = props => {
     onChangeValue,
     onSubmit,
     values
-  } = useWizard(initialValues, children.length, props.onSubmit)
+  } = useWizard({
+    initialValues,
+    size: children.length,
+    onSubmit: props.onSubmit
+  })
 
   const enabledSteps = React.Children.toArray(children).filter(
     child => !child.props.disabled
