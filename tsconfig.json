@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "outDir": "build/lib",
+    "module": "commonjs",
+    "target": "es5",
+    "lib": ["es5", "es6", "es7", "es2017", "dom"],
+    "sourceMap": true,
+    "allowJs": true,
+    "jsx": "react",
+    "moduleResolution": "node",
+    "rootDirs": ["src"],
+    "forceConsistentCasingInFileNames": true,
+    "removeComments": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "noUnusedLocals": true,
+    "declaration": false,  
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true
+  },
+  "include": ["src/**/*"],
+  "exclude": [
+    "node_modules",
+    "build",
+    "build/lib",
+    "scripts",
+    "es",
+    "lib",
+    "tests/**",
+    ".storybook/**",
+    ".idea",
+    ".html",
+    "src/**/*.test.js",
+    "src/**/*.test.ts",
+    "src/**/*.stories.js",
+    "src/**/*.stories.ts"
+  ]
+}
