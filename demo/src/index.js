@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 import { render } from "react-dom"
-import { Wizard } from "../../src/"
+import { Wizard } from "../../build/lib/"
 
 class Demo extends Component {
   render() {
@@ -23,6 +23,15 @@ class Demo extends Component {
             {({ nextStep, prevStep, currentIndex }) => (
               <div>
                 <h2>Bar {currentIndex}</h2>
+                <button onClick={prevStep}>Back</button>
+                <button onClick={nextStep}>Next</button>
+              </div>
+            )}
+          </Wizard.Step>
+          <Wizard.Step disabled>
+            {({ nextStep, prevStep, currentIndex }) => (
+              <div>
+                <h2>Bip {currentIndex}</h2>
                 <button onClick={prevStep}>Back</button>
                 <button onClick={nextStep}>Next</button>
               </div>
