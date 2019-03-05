@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 import { render } from "react-dom"
-import { Wizard } from "../../build/lib/"
+import { Wizard } from "../../src"
 
-class Demo extends Component {
+class App extends Component {
   render() {
     return (
       <div>
@@ -52,4 +52,4 @@ class Demo extends Component {
   }
 }
 
-render(<Demo />, document.querySelector("#demo"))
+render(<App />, document.getElementById("root"))

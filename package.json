@@ -3,19 +3,21 @@
   "version": "0.0.0-development",
   "description": "@rahsheen/react-wizard React component",
   "main": "lib/index.js",
-  "module": "es/index.js",
+  "module": "lib/index.js",
   "files": [
-    "css",
-    "es",
-    "lib",
-    "umd"
+    "lib"
   ],
   "scripts": {
-    "build": "tsc && nwb build-react-component",
     "build:ts": "tsc",
-    "clean": "nwb clean-module && nwb clean-demo",
-    "prepublishOnly": "npm run build",
-    "start": "nwb serve-react-demo",
+    "build:demo": "webpack --mode production",
+    "build": "npm run build:es2015 && npm run build:esm && npm run build:cjs && npm run build:umd && npm run build:umd:min",
+    "build:es2015": "tsc --module es2015 --target es2015 --outDir dist/es2015",
+    "build:esm": "tsc --module es2015 --target es5 --outDir dist/esm",
+    "build:cjs": "tsc --module commonjs --target es5 --outDir dist/cjs",
+    "build:umd": "tsc --module umd --target es5 --outDir dist/umd",
+    "clean": "rm -rf build",
+    "prepublishOnly": "npm run build:ts",
+    "start": "webpack-dev-server --mode development",
     "test": "jest",
     "test:coverage": "jest --coverage",
     "test:watch": "jest --watch",
@@ -24,7 +26,8 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "react": "16.x"
+    "react": "16.x",
+    "react-dom": "16.x"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.3.4",
@@ -32,20 +35,31 @@
     "@babel/preset-typescript": "^7.3.3",
     "@types/jest": "^24.0.9",
     "@types/node": "^11.10.4",
-    "@types/react-dom": "^16.8.2",
     "@types/react": "^16.8.6",
+    "@types/react-dom": "^16.8.2",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-cli": "^6.26.0",
     "babel-jest": "^24.1.0",
-    "jest-dom": "^3.1.2",
+    "babel-loader": "^8.0.5",
+    "css-loader": "^2.1.0",
+    "html-webpack-plugin": "^3.2.0",
     "jest": "^24.1.0",
-    "nwb": "0.23.x",
+    "jest-dom": "^3.1.2",
+    "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-test-renderer": "^16.8.3",
     "react-testing-library": "^6.0.0",
-    "react": "^16.8.3",
+    "rollup": "^1.4.1",
     "semantic-release": "^15.13.3",
+    "source-map-loader": "^0.2.4",
+    "style-loader": "^0.23.1",
     "travis-deploy-once": "^5.0.11",
     "ts-jest": "^24.0.0",
-    "typescript": "^3.3.3333"
+    "typescript": "^3.3.3333",
+    "uglifyjs": "^2.4.11",
+    "webpack": "^4.29.6",
+    "webpack-cli": "^3.2.3",
+    "webpack-dev-server": "^3.2.1"
   },
   "author": "Rahsheen A. Porter",
   "homepage": "https://rporter.tech",
@@ -55,6 +69,10 @@
     "url": "https://github.com/rahsheen/react-wizard.git"
   },
   "keywords": [
-    "react-component"
+    "react-component",
+    "react",
+    "hooks",
+    "wizard",
+    "multi-step"
   ]
 }
