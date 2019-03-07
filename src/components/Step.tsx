@@ -1,12 +1,11 @@
-
-interface StepProps {
+export interface StepProps {
   children: any
 }
 
 const Step = (props: StepProps) => {
-  const { children, ...rest } = props;
+  const { children, ...rest } = props
 
-  return children({ ...rest });
-};
+  return children({ ...rest })
+}
 
-export default Step;
+export default Step

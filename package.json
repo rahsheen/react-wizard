@@ -2,21 +2,20 @@
   "name": "@rahsheen/react-wizard",
   "version": "0.0.0-development",
   "description": "@rahsheen/react-wizard React component",
-  "main": "lib/index.js",
-  "module": "lib/index.js",
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
     "build:ts": "tsc",
     "build:demo": "webpack --mode production",
-    "build": "npm run build:es2015 && npm run build:esm && npm run build:cjs && npm run build:umd && npm run build:umd:min",
+    "build": "npm run build:es2015 && npm run build:esm && npm run build:cjs",
     "build:es2015": "tsc --module es2015 --target es2015 --outDir dist/es2015",
     "build:esm": "tsc --module es2015 --target es5 --outDir dist/esm",
     "build:cjs": "tsc --module commonjs --target es5 --outDir dist/cjs",
-    "build:umd": "tsc --module umd --target es5 --outDir dist/umd",
     "clean": "rm -rf build",
-    "prepublishOnly": "npm run build:ts",
+    "prepublishOnly": "npm run build",
     "start": "webpack-dev-server --mode development",
     "test": "jest",
     "test:coverage": "jest --coverage",
@@ -26,10 +25,11 @@
   },
   "dependencies": {},
   "peerDependencies": {
-    "react": "16.x",
-    "react-dom": "16.x"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.3.4",
     "@babel/preset-env": "^7.3.4",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.3.3",
