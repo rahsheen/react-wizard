@@ -49,6 +49,19 @@ const TestComponent = (props?: any) => (
   </Wizard>
 )
 
+const steps = [1, 2, 3].map(index => (
+  <Wizard.Step>
+    {({ nextStep, prevStep, onSubmit }) => (
+      <div>
+        <h2>Step {index}</h2>
+        <button onClick={prevStep}>prev</button>
+        <button onClick={nextStep}>next</button>
+        <button onClick={onSubmit}>submit</button>
+      </div>
+    )}
+  </Wizard.Step>
+))
+
 describe("Wizard Component", () => {
   afterEach(cleanup)
 
@@ -66,6 +79,17 @@ describe("Wizard Component", () => {
     // @ts-ignore
     const { container } = render(<Wizard initialValues={{}} onSubmit={null} />)
     expect(container.childElementCount).toBe(0)
+  })
+
+  xit("renders steps from array", async () => {
+    const { getByText } = render(
+      <Wizard initialValues={{}} onSubmit={null} steps={steps} />
+    )
+    await waitForElement(() => getByText(/Step/i))
+    fireEvent.click(getByText(/next/i))
+    await waitForElement(() => getByText(/Step 2/i))
+    fireEvent.click(getByText(/next/i))
+    await waitForElement(() => getByText(/Step 3/i))
   })
 
   it("doesn't render disabled steps", () => {

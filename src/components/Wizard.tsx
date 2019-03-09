@@ -8,6 +8,8 @@ export interface WizardProps {
   onSubmit: (values: object) => any
 }
 
+const WizardContext = React.createContext(null)
+
 const Wizard = (props: WizardProps) => {
   const { children, initialValues } = props
 
@@ -30,22 +32,38 @@ const Wizard = (props: WizardProps) => {
     onSubmit: props.onSubmit
   })
 
-  let currentElement = enabledSteps[index]
+  const currentElement = enabledSteps[index]
+  const value = React.useMemo(
+    () => ({
+      currentIndex: index,
+      prevStep,
+      nextStep,
+      onChangeValue,
+      onSubmit,
+      values,
+      isLast: index === children.length - 1
+    }),
+    [index]
+  )
 
-  return Boolean(currentElement)
-    ? React.cloneElement(currentElement, {
-        currentIndex: index,
-        prevStep,
-        nextStep,
-        onChangeValue,
-        onSubmit,
-        values,
-        isLast: index === children.length - 1
-      })
-    : null
+  return Boolean(currentElement) ? (
+    <WizardContext.Provider value={value}>
+      {currentElement}
+    </WizardContext.Provider>
+  ) : null
 }
 
-//@ts-ignore
-Wizard.Step = (props: any) => <Step {...props} />
+function useWizardContext() {
+  const context = React.useContext(WizardContext)
+  console.log("Dafuq", context)
+  if (!context) {
+    throw new Error(
+      `Wizard compound components cannot be rendered outside the Wizard component`
+    )
+  }
+  return context
+}
+
+Wizard.Step = (props: any) => <Step {...useWizardContext()} {...props} />
 
 export default Wizard
