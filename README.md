@@ -1,8 +1,9 @@
 # @rahsheen/react-wizard
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
+[![Build Status](https://travis-ci.org/rahsheen/react-wizard.svg?branch=master)](https://travis-ci.org/rahsheen/react-wizard)
+![npm (scoped)](https://img.shields.io/npm/v/@rahsheen/react-wizard.svg)
 [![Coverage Status](https://coveralls.io/repos/github/rahsheen/react-wizard/badge.svg?branch=master)](https://coveralls.io/github/rahsheen/react-wizard?branch=master)
+
 
 @rahsheen/react-wizard is a flexible wizard component which can be used with react or react-native.
 
@@ -34,7 +35,3 @@ Making use of render props, @rahsheen/react-wizard allows you to control exactly
 </Wizard>
 ```
 
-[build-badge]: https://img.shields.io/travis/rahsheen/react-wizard/master.png?style=flat-square
-[build]: https://travis-ci.org/rahsheen/react-wizard
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
