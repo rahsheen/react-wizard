@@ -1,11 +1,10 @@
 # @rahsheen/react-wizard
 
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
-
 [![Build Status](https://travis-ci.org/rahsheen/react-wizard.svg?branch=master)](https://travis-ci.org/rahsheen/react-wizard)
 ![npm (scoped)](https://img.shields.io/npm/v/@rahsheen/react-wizard.svg)
 [![Coverage Status](https://coveralls.io/repos/github/rahsheen/react-wizard/badge.svg?branch=master)](https://coveralls.io/github/rahsheen/react-wizard?branch=master)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
 React Wizard is a flexible wizard / multi-step form component which can be used with React or React-Native.
 
