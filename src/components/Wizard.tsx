@@ -1,21 +1,22 @@
 import * as React from "react"
 import useWizard from "../hooks/useWizard"
-import Step from "./Step"
+import Step, { StepProps } from "./Step"
 
 export interface WizardProps {
-  children: any
-  initialValues: object
-  onSubmit: (values: object) => any
+  steps?: any
+  children?: any
+  initialValues?: object
+  onSubmit?: (values: object) => any
 }
 
 const WizardContext = React.createContext(null)
 
 const Wizard = (props: WizardProps) => {
-  const { children, initialValues } = props
+  const { children, steps, initialValues } = props
 
-  if (!children) return null
+  if (!(children || steps)) return null
 
-  const enabledSteps = React.Children.toArray(children).filter(
+  const enabledSteps = React.Children.toArray([steps, children]).filter(
     child => !child.props.disabled
   )
 
@@ -32,7 +33,6 @@ const Wizard = (props: WizardProps) => {
     onSubmit: props.onSubmit
   })
 
-  const currentElement = enabledSteps[index]
   const value = React.useMemo(
     () => ({
       currentIndex: index,
@@ -41,21 +41,21 @@ const Wizard = (props: WizardProps) => {
       onChangeValue,
       onSubmit,
       values,
-      isLast: index === children.length - 1
+      isLast: index === enabledSteps.length - 1
     }),
     [index]
   )
 
-  return Boolean(currentElement) ? (
-    <WizardContext.Provider value={value}>
-      {currentElement}
-    </WizardContext.Provider>
+  const activeStep = enabledSteps[index]
+
+  return Boolean(activeStep) ? (
+    <WizardContext.Provider value={value}>{activeStep}</WizardContext.Provider>
   ) : null
 }
 
 function useWizardContext() {
   const context = React.useContext(WizardContext)
-  console.log("Dafuq", context)
+
   if (!context) {
     throw new Error(
       `Wizard compound components cannot be rendered outside the Wizard component`
@@ -64,6 +64,6 @@ function useWizardContext() {
   return context
 }
 
-Wizard.Step = (props: any) => <Step {...useWizardContext()} {...props} />
+Wizard.Step = (props: StepProps) => <Step {...useWizardContext()} {...props} />
 
 export default Wizard
