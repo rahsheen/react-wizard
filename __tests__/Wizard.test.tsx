@@ -5,10 +5,7 @@ import {
   cleanup,
   waitForElement
 } from "react-testing-library"
-// adds special assertions like toHaveTextContent
-import "jest-dom/extend-expect"
-
-import { Wizard } from "../src/"
+import { Wizard, useWizard } from "../src/"
 
 const TestComponent = (props?: any) => (
   <Wizard {...props}>
@@ -62,30 +59,51 @@ const steps = [1, 2, 3].map(index => (
   </Wizard.Step>
 ))
 
+const DefaultWizard = props => {
+  const wizardProps = useWizard()
+
+  console.log(wizardProps.index)
+  return <div>Step {wizardProps.index}</div>
+}
+
 describe("Wizard Component", () => {
   afterEach(cleanup)
 
-  it("renders", () => {
-    const { getByText } = render(
-      <Wizard initialValues={{}} onSubmit={null}>
-        <Wizard.Step>{() => <h2>@rahsheen/React-Wizard</h2>}</Wizard.Step>
-      </Wizard>
-    )
+  it("uses default values", async () => {
+    const { getByText } = render(<DefaultWizard />)
+    await waitForElement(() => getByText(/Step/i))
+  })
 
-    expect(getByText("@rahsheen/React-Wizard"))
+  it("renders", () => {
+    const { getByText } = render(<TestComponent />)
+    expect(getByText("Step 1"))
   })
 
   it("does not render without children", () => {
-    // @ts-ignore
-    const { container } = render(<Wizard initialValues={{}} onSubmit={null} />)
+    const { container } = render(<Wizard />)
     expect(container.childElementCount).toBe(0)
   })
 
-  xit("renders steps from array", async () => {
-    const { getByText } = render(
-      <Wizard initialValues={{}} onSubmit={null} steps={steps} />
+  it("throws an error if Steps are used outside of a Wizard", () => {
+    expect(() =>
+      render(<Wizard.Step>{() => <p>foo</p>}</Wizard.Step>)
+    ).toThrow()
+  })
+
+  it("renders null if no active step found", () => {
+    const { container } = render(
+      <Wizard>
+        <Wizard.Step disabled>{() => <p>Test</p>}</Wizard.Step>
+        <Wizard.Step disabled>{() => <p>Test</p>}</Wizard.Step>
+        <Wizard.Step disabled>{() => <p>Test</p>}</Wizard.Step>
+      </Wizard>
     )
-    await waitForElement(() => getByText(/Step/i))
+    expect(container.childElementCount).toBe(0)
+  })
+
+  it("renders steps from array", async () => {
+    const { getByText } = render(<Wizard steps={steps} />)
+    await waitForElement(() => getByText(/Step 1/i))
     fireEvent.click(getByText(/next/i))
     await waitForElement(() => getByText(/Step 2/i))
     fireEvent.click(getByText(/next/i))
