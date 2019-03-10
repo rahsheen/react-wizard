@@ -119,7 +119,7 @@ return (
 
 ## Contributing
 
-Feel free to dive in! [Open an issue](https://github.com/@rahsheen/react-wizard/issues/new) or submit PRs.
+Feel free to dive in! [Open an issue](https://github.com/rahsheen/react-wizard/issues/new) or submit PRs.
 
 React Wizard follows the [Contributor Covenant](http://contributor-covenant.org/version/1/3/0/) Code of Conduct.
 
