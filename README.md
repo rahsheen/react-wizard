@@ -1,5 +1,5 @@
 # @rahsheen/react-wizard
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors)
 
 [![Build Status](https://travis-ci.org/rahsheen/react-wizard.svg?branch=master)](https://travis-ci.org/rahsheen/react-wizard)
 ![npm (scoped)](https://img.shields.io/npm/v/@rahsheen/react-wizard.svg)
@@ -43,8 +43,8 @@ Thanks goes to these wonderful people ([emoji key](https://github.com/all-contri
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars1.githubusercontent.com/u/11909710?v=4" width="100px;" alt="pahosler"/><br /><sub><b>pahosler</b></sub>](https://github.com/pahosler)<br />[💡](#example-pahosler "Examples") [🤔](#ideas-pahosler "Ideas, Planning, & Feedback") |
-| :---: |
+| [<img src="https://avatars1.githubusercontent.com/u/11909710?v=4" width="100px;" alt="pahosler"/><br /><sub><b>pahosler</b></sub>](https://github.com/pahosler)<br />[💡](#example-pahosler "Examples") [🤔](#ideas-pahosler "Ideas, Planning, & Feedback") | [<img src="https://avatars0.githubusercontent.com/u/38302762?v=4" width="100px;" alt="Jody LeCompte"/><br /><sub><b>Jody LeCompte</b></sub>](https://jodylecompte.com)<br />[⚠️](https://github.com/rahsheen/react-wizard/commits?author=jodylecompte "Tests") [🤔](#ideas-jodylecompte "Ideas, Planning, & Feedback") |
+| :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
