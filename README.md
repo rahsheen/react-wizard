@@ -1,4 +1,5 @@
 # @rahsheen/react-wizard
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 [![Build Status](https://travis-ci.org/rahsheen/react-wizard.svg?branch=master)](https://travis-ci.org/rahsheen/react-wizard)
 ![npm (scoped)](https://img.shields.io/npm/v/@rahsheen/react-wizard.svg)
@@ -35,3 +36,15 @@ Making use of render props, @rahsheen/react-wizard allows you to control exactly
 </Wizard>
 ```
 
+
+## Contributors
+
+Thanks goes to these wonderful people ([emoji key](https://github.com/all-contributors/all-contributors#emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore -->
+| [<img src="https://avatars1.githubusercontent.com/u/11909710?v=4" width="100px;" alt="pahosler"/><br /><sub><b>pahosler</b></sub>](https://github.com/pahosler)<br />[💡](#example-pahosler "Examples") [🤔](#ideas-pahosler "Ideas, Planning, & Feedback") |
+| :---: |
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
