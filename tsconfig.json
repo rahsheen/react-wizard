@@ -16,7 +16,8 @@
     "declaration": false,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "inlineSourceMap": true
   },
   "include": ["src/**/*"],
   "exclude": [

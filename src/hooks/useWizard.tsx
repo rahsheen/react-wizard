@@ -3,7 +3,7 @@ import { useState } from "react"
 function useWizard({
   initialValues = {},
   size = 2,
-  onSubmit: onSubmitWizard = ({}): any => {}
+  onSubmit: onSubmitWizard = null
 } = {}) {
   const [index, setIndex] = useState(0)
   const [values, setValues] = useState({ ...initialValues })
@@ -23,10 +23,10 @@ function useWizard({
   }
 
   const onChangeValue = (name: string, value: string) => {
-    setValues({
-      ...values,
+    setValues(oldValues => ({
+      ...oldValues,
       [name]: value
-    })
+    }))
   }
 
   return {

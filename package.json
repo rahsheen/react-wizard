@@ -14,8 +14,6 @@
     "build:es2015": "tsc --module es2015 --target es2015 --outDir dist/es2015",
     "build:esm": "tsc --module es2015 --target es5 --outDir dist/esm",
     "build:cjs": "tsc --module commonjs --target es5 --outDir dist/cjs",
-    "build:umd": "rollup dist/esm/index.js --format umd --name ReactWizard --sourceMap --output dist/umd/react-wizard.js",
-    "build:umd:min": "cd dist/umd && uglifyjs --compress --mangle --source-map --screw-ie8 --comments --o react-wizard.min.js -- react-wizard.js && gzip react-wizard.min.js -c > react-wizard.min.js.gz",
     "clean": "rm -rf build",
     "prepublishOnly": "npm run build",
     "start": "webpack-dev-server --mode development",
