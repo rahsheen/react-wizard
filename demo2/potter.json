@@ -1,0 +1,97 @@
+[
+  {
+    "clue": "When is Harry Potters birthday?",
+    "answers": {
+      "July 30, 1980": 0,
+      "July 31, 1981": 0,
+      "July 31, 1980": 1,
+      "July 30, 1981": 0
+      }
+  },
+  {
+    "clue":"What is Harry Potters middle name?",
+    "answers": {
+      "James": 1,
+      "Albus": 0,
+      "Sirius": 0,
+      "Peter": 0
+    }
+  },
+  {
+    "clue": "Select all that apply: Which of the following potions are believed to have been invented by the Potter family?",
+    "answers": {
+      "Pepperup Potion": 1,
+      "Polyjuice Potion": 0,
+      "Sleekeazy's Hair Potion": 1,
+      "Felix Felicis": 0,
+      "Skele-gro": 1
+    
+    }
+  },
+  {
+    "clue":"How many birthday cakes did Harry receive when he turned 14?",
+    "answers": {
+      "4": 1,
+      "2": 0,
+      "3": 0,
+      "5": 0
+    }
+  },
+  {
+    "clue": "In which book does Harry find the name for his pet owl, Hedwig?",
+    "answers": {
+      "Hogwarts: A History": 0,
+      "A History of Magic": 1,
+      "The Dark Forces: A Guide to Self-Protection": 0,
+      "Fantastic Beasts and Where to Find Them": 0
+    }
+  },
+  {
+    "clue":"According to Lockhart's 'card-carrying Cupid', Harry's eyes are as green as...",
+    "answers": {
+      "An emerald-green cloak": 0,
+      "A freshly mown lawn": 0,
+      "A fresh pickled toad": 1,
+      "An Irish Spring morn": 0
+    }
+  },
+  {
+    "clue":"Which grade is Harry awarded for his History of Magic O.W.L. exam?",
+    "answers": {
+      "P": 0,
+      "A": 0,
+      "D": 1,
+      "E": 0
+    }
+  },
+  {
+    "clue":"Select all that apply: Which of the following injuries does Madam Pomfrey treat Harry for?",
+    "answers": {
+      "Skrewt burns": 0,
+      "Dragon bite": 0,
+      "Petrification": 0,
+      "Missing bones": 1,
+      "Stinging jinx": 0,
+      "Cracked skull": 1
+    }
+  },
+  {
+    "clue":"Which book does Harry think about to distract himself from Aunt Marge's insults?",
+    "answers": { 
+      "Quidditch Teams of Brittan and Ireland": 0,
+      "Quidditch Through the Ages": 0,
+      "Flying with the Cannons": 0,
+      "Handbook of Do-It-Yourself Broomcare": 1
+    }
+  },
+  {
+    "clue":"In which chapter does Harry learn that Sirius is his godfather?",
+    "answers": {
+      "The Marauder's Map": 1,
+      "Talons and Tea Leaves": 0,
+      "Grim Defeat": 0,
+      "Moony, Wormtail, Padfoot and Prongs": 0,
+      "Flight of the Fat Lady":0
+    }
+  }
+]

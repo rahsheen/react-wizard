@@ -1,0 +1,91 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  height: 110vh;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+}
+.App {
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url('https://uploads.codesandbox.io/uploads/user/13eded90-44ff-4b73-932a-f2fd7f768298/Vv0t-harry-potter-theme-10.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #ffffff;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.start {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.start img {
+  width: 50%;
+  padding: 15px;
+}
+
+.start p {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 1.4em;
+}
+
+.qContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.qContainer h3 {
+  width: 300px;
+}
+.qContainer ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  justify-content: inherit;
+  list-style-type: none;
+  width: max-content;
+  padding: 20px;
+}
+
+.qContainer li {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-self: inherit;
+  width: 100%;
+  position: relative;
+  padding: 3px;
+}
+
+.bContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: none;
+  align-items: center;
+}
