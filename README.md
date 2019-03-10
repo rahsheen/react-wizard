@@ -7,33 +7,115 @@
 
 
 
-@rahsheen/react-wizard is a flexible wizard component which can be used with react or react-native.
+React Wizard is a flexible wizard / multi-step form component which can be used with React or React-Native.
 
-Making use of render props, @rahsheen/react-wizard allows you to control exactly how each step is rendered.
+Making use of render props (and hooks internally), React Wizard allows you to control exactly how each step is rendered. The ultimate goal will be to not only provide the tools to build a custom wizard, but also provide simpler API's for more specific use-cases.
 
-## Example
+## Examples
 
+### Basic Usage
 ```javascript
 <Wizard>
   <Wizard.Step>
-    {({ nextStep, prevStep }) => {
+    {({ nextStep, prevStep, currentIndex }) => {
       return (
         <div>
-          <h2>This is Step 1</h2>
+          <h2>Step {currentIndex}</h2>
+          <button onClick={prevStep}>Back</button>
           <button onClick={nextStep}>Next</button>
         </div>
-      );
+      )
     }}
   </Wizard.Step>
-  <Wizard.Step>
-    {({ submit, prevStep }) => (
+  <div>
+    <Wizard.Step>
+      {({ nextStep, prevStep, currentIndex, onChangeValue }) => (
+        <div>
+          <h2>Enter Your Username</h2>
+          <p>Step {currentIndex}</p>
+          <input type="text"
+           onChange={e => onChangeValue("username", e.target.value)} /> 
+          <button onClick={prevStep}>Back</button>
+          <button onClick={nextStep}>Next</button>
+        </div>
+      )}
+    </Wizard.Step>
+  </div>
+  <Wizard.Step disabled> // This step will not be rendered
+    {({ nextStep, prevStep, currentIndex }) => (
       <div>
-        <h2>This is Step 2</h2>
+        <h2>Step {currentIndex}</h2>
         <button onClick={prevStep}>Back</button>
-        <button onClick={onSubmit}>Finish</button>
+        <button onClick={nextStep}>Next</button>
+      </div>
+    )}
+  </Wizard.Step>
+  <Wizard.Step>
+    {({ nextStep, prevStep, currentIndex, onSubmit }) => (
+      <div>
+        <h2>Baz {currentIndex}</h2>
+        <button onClick={prevStep}>Back</button>
+        <button onClick={onSubmit}>Submit</button>
       </div>
     )}
   </Wizard.Step>
 </Wizard>
 ```
 
+### Usage with an Array of Components
+
+```javascript
+const steps = [1, 2, 3].map(index => (
+  <Wizard.Step>
+    {({ nextStep, prevStep, onSubmit }) => (
+      <div>
+        <h2>Step {index}</h2>
+        <button onClick={prevStep}>prev</button>
+        <button onClick={nextStep}>next</button>
+      </div>
+    )}
+  </Wizard.Step>
+))
+
+return <Wizard steps={steps} />
+
+```
+
+### Combining Both
+
+In this case, the array of `Wizard.Step` components is rendered before those specified as children of the Wizard component.
+
+```javascript
+const steps = [1, 2, 3].map(index => (
+  <Wizard.Step>
+    {({ nextStep, prevStep, onSubmit }) => (
+      <div>
+        <h2>Step {index}</h2>
+        <button onClick={prevStep}>prev</button>
+        <button onClick={nextStep}>next</button>
+      </div>
+    )}
+  </Wizard.Step>
+))
+
+return (
+  <Wizard steps={steps}>
+    <Wizard.Step>
+      {({ nextStep, prevStep, currentIndex, onSubmit }) => (
+        <div>
+          <h2>Baz {currentIndex}</h2>
+          <button onClick={prevStep}>Back</button>
+          <button onClick={onSubmit}>Submit</button>
+        </div>
+      )}
+    </Wizard.Step>
+  </Wizard>
+)
+
+```
+
+## Contributing
+
+Feel free to dive in! [Open an issue](https://github.com/@rahsheen/react-wizard/issues/new) or submit PRs.
+
+React Wizard follows the [Contributor Covenant](http://contributor-covenant.org/version/1/3/0/) Code of Conduct.
