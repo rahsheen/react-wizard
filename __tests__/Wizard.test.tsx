@@ -61,8 +61,6 @@ const steps = [1, 2, 3].map(index => (
 
 const DefaultWizard = props => {
   const wizardProps = useWizard()
-
-  console.log(wizardProps.index)
   return <div>Step {wizardProps.index}</div>
 }
 
