@@ -10,7 +10,7 @@
   "main": "src/index.js",
   "dependencies": {
     "@rahsheen/react-wizard": "../..",
-    "codecov": "3.1.0",
+    "codecov": "3.6.5",
     "coveralls": "3.0.2",
     "normalize-css": "2.3.1",
     "react": "16.5.2",
